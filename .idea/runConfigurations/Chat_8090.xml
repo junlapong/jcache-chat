@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Chat_8090" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="de.consol.chat.ChatApplication" />
+    <option name="PROGRAM_PARAMETERS" value="--server.port=8090" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <module name="chat" />
+    <envs />
+    <method />
+  </configuration>
+</component>

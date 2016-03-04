@@ -1,0 +1,10 @@
+body {
+  padding-top: 10px;
+}
+
+.page-header {
+  margin:0;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background: #0099cc;
+}

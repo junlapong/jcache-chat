@@ -1,0 +1,54 @@
+<hazelcast
+    xsi:schemaLocation="http://www.hazelcast.com/schema/config
+  http://www.hazelcast.com/schema/config/hazelcast-config-3.5.xsd"
+    xmlns="http://www.hazelcast.com/schema/config"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <group>
+    <name>martin</name>
+    <password>martin</password>
+  </group>
+  <network>
+    <join>
+      <multicast enabled="true"/>
+    </join>
+  </network>
+  <cache name="id">
+    <key-type class-name="java.lang.String"/>
+    <value-type class-name="java.lang.Long"/>
+    <statistics-enabled>false</statistics-enabled>
+    <management-enabled>false</management-enabled>
+  </cache>
+  <cache name="room">
+    <key-type class-name="java.lang.Long"/>
+    <value-type class-name="de.consol.chat.model.Room"/>
+    <statistics-enabled>false</statistics-enabled>
+    <management-enabled>false</management-enabled>
+    <cache-entry-listeners>
+      <cache-entry-listener old-value-required="false" synchronous="false">
+        <cache-entry-listener-factory class-name="de.consol.chat.config.eventlistener.RoomEventListenerFactory"/>
+      </cache-entry-listener>
+    </cache-entry-listeners>
+    <!--
+    <expiry-policy-factory class-name="de.consol.chat.config.expirypolicy.RoomExpiryPolicyFactory"/>
+    <read-through>true</read-through>
+    <cache-loader-factory class-name="de.consol.chat.config.loader.RoomLoaderFactory"/>
+    <write-through>true</write-through>
+    <cache-writer-factory class-name="de.consol.chat.config.writer.RoomWriterFactory"/>
+    -->
+  </cache>
+  <cache name="user">
+    <key-type class-name="java.lang.Long"/>
+    <value-type class-name="java.lang.String"/>
+    <statistics-enabled>false</statistics-enabled>
+    <management-enabled>false</management-enabled>
+    <cache-entry-listeners>
+      <cache-entry-listener old-value-required="false" synchronous="false">
+        <cache-entry-listener-factory class-name="de.consol.chat.config.eventlistener.UserEventListenerFactory"/>
+      </cache-entry-listener>
+    </cache-entry-listeners>
+  </cache>
+  <!--management-center enabled="true">http://localhost:8080/mancenter</management-center-->
+</hazelcast>
+
+
+

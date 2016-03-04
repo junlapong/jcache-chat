@@ -1,0 +1,6 @@
+*.iml
+.idea/copyright/
+.idea/libraries/
+.idea/*.xml
+target/
+.DS_Store

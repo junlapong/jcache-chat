@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JCache Chat</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet">
+</head>
+
+<body onload="disconnect()">
+<div class="container">
+    <div class="page-header">
+        <div id="leave" class="pull-right">
+            <form id="form-leave" class="form-inline">
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Leave</button>
+            </form>
+        </div>
+        <h1>JCache Chat</h1>
+        <div id="join">
+            <form id="form-join" class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username" placeholder="Enter your name" autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Join</button>
+            </form>
+        </div>
+        <p class="lead" id="welcome" style="color:#4cae4c;"></p>
+    </div>
+    <div class="row">
+        <div id="room-container" class="col-md-3 panel panel-success" style="border: none;">
+            <div class="panel-heading"><h3 class="panel-title">Rooms</h3></div>
+            <div class="panel-body" style="min-height: 250px; max-height: 250px;">
+                <div id="rooms">
+                    <ul id="room-list" class="nav nav-pills nav-stacked">
+                    </ul>
+                </div>
+                <form id="form-new-room">
+                    <div class="form-inline" style="padding-top: 10px">
+                        <input type="text" class="form-control" id="newRoom" placeholder="New Room" autocomplete="off">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="message-container" class="col-md-9 panel panel-success" style="border: none;">
+            <div class="panel-heading"><h3 class="panel-title">Messages</h3></div>
+            <div class="panel-body" style="min-height: 250px; max-height: 250px;">
+                <div id="room-messages">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="user-container" class="col-md-3 panel panel-success" style="border: none;">
+            <div class="panel-heading"><h3 class="panel-title">Users</h3></div>
+            <div id="user-container-inner" class="panel-body" style="min-height: 200px; max-height: 200px;">
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="js/sockjs-0.3.4.js"></script>
+<script src="js/stomp.js"></script>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>
